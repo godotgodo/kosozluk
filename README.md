@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+-***npm install*** komutuyla bağımlılıklar yüklendikten sonra -***npm start*** ile proje çalıştırılabilir.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---**/entry/5 ile id'si 5 olan entry çekilecekse gelen entry objesi şu şekilde olabilir:**
+entry:{
 
-## Available Scripts
+		id:5,
+		baslikID:11,
+		baslik:"kou iletişim fakültesi",
+		entry:"<div> <img src='...'/> <h1>iletişim fak çok güzel</h1><p>iletişim fakültesi o kadar da güzel değil</p> </div>",
+		entryImage:"...",
+		haveImage:true,
+		date:"24.11.2022",
+		userID:21,
+		userName:"faruk akar",
+		userAvatar:"..."
+}
 
-In the project directory, you can run:
+---**/baslik/18 ile id'si 18 olan başlık çekilecekse gelen başlık objesi şu şekilde olabilir:**
+baslik:{
 
-### `npm start`
+		id:18,
+		baslikName:"falan filan",
+		entryler:[
+		-yukarıdaki entryler şeklinde objeler dönebilir-
+		],
+		tags:[
+			{tagID:3,tagName:"Sinema"},
+			{tagID:5,tagName:"Müzik"}
+		]
+}
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---**/baslik/18/entry/3 ile 18 id' li başlıktaki 3 id'li entry dönerse de işe yarar.**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Sol frame'de son 24 saatteki açılmış başlıklar listelenecek. Sıralaması en yakın tarihten en uzak tarihe olabilir. Oylama sistemi geldikten sonra zaten puana göre yukarı çıkacak.
 
-### `npm test`
+Anasayfa ekranındaki slider'da gündem yani son 24 saatteki en popüler başlıklar yüklenecek ancak ilk etapta oylama sistemi yapmadığımız için rastgele 5 başlık dönse yeter.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Anasayfada tags'lerin altındaki entryler de ilk etapta rastgele 5 entry olabilir.
 
-### `npm run build`
+**/duyurular ile son 1 ayda yüklenmiş duyurular listelenebilir,
+/duyurular/7 ile id'si 7 olan duyuru objesi şu şekilde olabilir:**
+duyuru:{
+		
+		id:7,
+		duyuruName:"umuttepede köpekler toplatılsın kampanyası",
+		duyuruText:"ya bence barınaklar çözüm değil :((",
+		duyuruTarihi:"24.11.2022",
+		userID:21,
+		userName:"faruk akar",
+		userAvatar:"..."
+}
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+iş ilanları da duyurular ile aynı formatta olucak zaten hiçbir farkı yok.
